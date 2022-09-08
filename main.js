@@ -3,26 +3,26 @@ var receiveMessageButton = document.querySelector('#recieve-message-button');
 var radioButtons = document.querySelectorAll('.radio-button'); /*this will give us an array*/
 var meditateImage = document.querySelector('#meditateImage');
 var messageDisplay = document.querySelector('#message-display');
+var homeView = document.querySelector('.home-view');
+var loginView = document.querySelector('.login');
+var loginButton = document.querySelector('#login-button');
+var nameInput = document.querySelector('#name-field');
+var greetingSection = document.querySelector('#greeting');
+
 
 //Making Event Listeners Here:
+window.addEventListener('load', displayLogin)
+
+loginButton.addEventListener('click', displayHomeScreen)
+
 receiveMessageButton.addEventListener('click', generateMessage);
 
 
 //The DATA MODEL:
-var messagesToDisplay = []
-
+var messagesToDisplay = [];
+var namesToDisplay = [];
 
 //functions that called in event listeners:
-function displayMessage() {
-  removeImage();
-  messageDisplay.innerHTML = ''
-  for (var i = 0; i < messagesToDisplay.length; i++) {
-    messageDisplay.innerHTML += `
-    <p>${messagesToDisplay[i]}</p>
-    `
-  }
-}
-
 function generateMessage() {
   for(var i = 0; i < radioButtons.length; i++) {
     if(radioButtons[i].checked && radioButtons[i].id === 'affirmation-button') {
@@ -36,11 +36,30 @@ function generateMessage() {
   } displayMessage();
 }
 
+function displayLogin(){
+  homeView.classList.add("hidden");
+  loginView.classList.remove("hidden");
+}
 
-
-
+function displayHomeScreen() {
+  event.preventDefault();
+  loginView.classList.add("hidden");
+  homeView.classList.remove("hidden");
+  getLoginInfo();
+  displayGreeting();
+}
 
 //functions that are used in event handlers:
+function displayMessage() {
+  removeImage();
+  messageDisplay.innerHTML = ''
+  for (var i = 0; i < messagesToDisplay.length; i++) {
+    messageDisplay.innerHTML += `
+    <p>${messagesToDisplay[i]}</p>
+    `
+  }
+}
+
 function removeImage() {
   meditateImage.classList.add('hidden');
 }
@@ -49,6 +68,21 @@ function removeImage() {
 function getRandomNumber(arrayLength) {
   return Math.floor(Math.random()* arrayLength)
 };
+
+function getLoginInfo() {
+  namesToDisplay = []
+  namesToDisplay.push(nameInput.value)
+}
+
+function displayGreeting() {
+  greetingSection.innerHTML = ''
+  for (var i = 0; i < namesToDisplay.length; i++) {
+    greetingSection.innerHTML += `
+    <h2>Welcome back ${namesToDisplay[i]}!
+    `
+  }
+}
+
 
 
 
