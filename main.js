@@ -78,7 +78,7 @@ function displayGreeting() {
   greetingSection.innerHTML = ''
   for (var i = 0; i < namesToDisplay.length; i++) {
     greetingSection.innerHTML += `
-    <h2>Welcome back ${namesToDisplay[i]}!
+    <h2 id="named-greeting"> Welcome back ${namesToDisplay[i]}!</h2>
     `
   }
 }
