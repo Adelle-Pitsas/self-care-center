@@ -25,11 +25,17 @@ h1 {
   font-size: 40px;
 }
 
-#type-of-message {
+h2 {
   color: #ffffff;
   margin-top: 40px;
   font-size: 22px;
   margin-bottom: auto;
+}
+
+h3 {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 200;
 }
 
 #message-section {
@@ -96,6 +102,53 @@ h1 {
   font-weight: 100;
 }
 
+#see-all-messages-button {
+  background-color: #134d71;
+  color: #ffffff;
+  font-size: 16px;
+  border-radius: 5px;
+  width: 185px;
+  height: 28px;
+  margin-top: 30px;
+  cursor: pointer;
+}
+
+/*all messages display*/
+#all-messages-title {
+  margin-bottom: 30px;
+}
+
+.all-message-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#create-message-box {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: #ffffff;
+  padding: 10px;
+  border-radius: 10px;
+  width: 600px
+}
+
+#custom-message {
+  margin: 10px;
+  width: 350px;
+}
+
+#create-custom-message {
+  background-color: #134d71;
+  color: #ffffff;
+  font-size: 16px;
+  border-radius: 5px;
+  width: 185px;
+  height: 28px;
+  margin-top: 30px;
+  cursor: pointer;
+}
 /*login page*/
 
 .login {

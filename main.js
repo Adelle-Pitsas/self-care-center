@@ -8,6 +8,13 @@ var loginView = document.querySelector('.login');
 var loginButton = document.querySelector('#login-button');
 var nameInput = document.querySelector('#name-field');
 var greetingSection = document.querySelector('#greeting');
+var seeAllMessagesButton = document.querySelector('#see-all-messages-button');
+var seeAllMessagesView = document.querySelector('.all-message-display');
+var addCustomMessageButton = document.querySelector('.create-custom-message');
+var newRadioButtons = document.querySelectorAll('.new-radio-button');
+var newMessageInput = document.querySelector('#custom-message');
+var affirmationsListArea = document.querySelector('#affirmations-list');
+var mantrasListArea = document.querySelector('#mantras-list')
 
 
 //Making Event Listeners Here:
@@ -17,6 +24,9 @@ loginButton.addEventListener('click', displayHomeScreen)
 
 receiveMessageButton.addEventListener('click', generateMessage);
 
+seeAllMessagesButton.addEventListener('click', displayAllMessagesView)
+
+addCustomMessageButton.addEventListener('click', addMessageToList)
 
 //The DATA MODEL:
 var messagesToDisplay = [];
@@ -48,6 +58,27 @@ function displayHomeScreen() {
   getLoginInfo();
   displayGreeting();
 }
+
+function displayAllMessagesView() {
+  homeView.classList.add("hidden");
+  loginView.classList.add("hidden");
+  seeAllMessagesView.classList.remove("hidden");
+  displayAllLists();
+}
+
+function addMessageToList() {
+  for(var i = 0; i < newRadioButtons.length; i++) {
+    if(newRadioButtons[i].checked && newRadioButtons[i].id === 'new-affirmation-button') {
+      console.log(newMessageInput.value)
+      affirmations.push(newMessageInput.value);
+    }
+    if(newRadioButtons[i].checked && newRadioButtons[i].id === 'new-mantra-button') {
+      mantras.push(newMessageInput.value);
+    }
+  }
+  displayAllMessagesView();
+}
+
 
 //functions that are used in event handlers:
 function displayMessage() {
@@ -83,6 +114,20 @@ function displayGreeting() {
   }
 }
 
+function displayAllLists() {
+  for (var i = 0; i < affirmations.length; i++) {
+    affirmationsListArea.innerHTML = "";
+    affirmationsListArea += `
+    <p>${affirmations[i]}</p>
+    `
+  }
+  for (var i = 0; i < mantras.length; i++) {
+    mantrasListArea.innerHTML = "";
+    mantrasListArea += `
+    <p>${mantras[i]}</p>
+    `
+  }
+}
 
 
 
