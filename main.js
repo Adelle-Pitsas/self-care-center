@@ -8,7 +8,12 @@ var loginView = document.querySelector('.login');
 var loginButton = document.querySelector('#login-button');
 var nameInput = document.querySelector('#name-field');
 var greetingSection = document.querySelector('#greeting');
-
+var addCustomMessageButton = document.querySelector('.create-custom-message');
+var newRadioButtons = document.querySelectorAll('.new-radio-button');
+var newMessageInput = document.querySelector('#custom-message');
+var createYourOwnMessageButton = document.querySelector('#create-your-own-message-button')
+var customMessageInterface = document.querySelector('.create-message-box')
+var errorMessage = document.querySelector(".error-message");
 
 //Making Event Listeners Here:
 window.addEventListener('load', displayLogin)
@@ -17,6 +22,9 @@ loginButton.addEventListener('click', displayHomeScreen)
 
 receiveMessageButton.addEventListener('click', generateMessage);
 
+createYourOwnMessageButton.addEventListener('click', displayCustomMessageInterface)
+
+addCustomMessageButton.addEventListener('click', addMessageToList)
 
 //The DATA MODEL:
 var messagesToDisplay = [];
@@ -48,6 +56,33 @@ function displayHomeScreen() {
   getLoginInfo();
   displayGreeting();
 }
+
+function displayCustomMessageInterface() {
+  customMessageInterface.classList.remove("hidden");
+  createYourOwnMessageButton.classList.add("hidden");
+}
+
+
+
+function addMessageToList() {
+  for(var i = 0; i < newRadioButtons.length; i++) {
+    if(newRadioButtons[i].checked && newRadioButtons[i].id === 'new-affirmation-button') {
+      affirmations.push(newMessageInput.value);
+      messagesToDisplay.push(newMessageInput.value);
+      errorMessage.classList.add("hidden")
+    }
+    if(newRadioButtons[i].checked && newRadioButtons[i].id === 'new-mantra-button') {
+      mantras.push(newMessageInput.value);
+      messagesToDisplay.push(newMessageInput.value);
+      errorMessage.classList.add("hidden")
+    }
+  }
+  if (!newRadioButtons[0].checked && !newRadioButtons[1].checked) {
+    errorMessage.classList.remove("hidden");
+  }
+  displayMessage();
+}
+
 
 //functions that are used in event handlers:
 function displayMessage() {
@@ -83,6 +118,20 @@ function displayGreeting() {
   }
 }
 
+function displayAllLists() {
+  for (var i = 0; i < affirmations.length; i++) {
+    messageListDisplayArea.innerHTML = "";
+    messageListDisplayArea += `
+    <div>${affirmations[i]}</div>
+    `
+  }
+  for (var i = 0; i < mantras.length; i++) {
+    mantrasListArea.innerHTML = "";
+    mantrasListArea += `
+    <p>${mantras[i]}</p>
+    `
+  }
+}
 
 
 
