@@ -65,16 +65,17 @@ function displayCustomMessageInterface() {
 
 
 function addMessageToList() {
+  messagesToDisplay = [];
   for(var i = 0; i < newRadioButtons.length; i++) {
     if(newRadioButtons[i].checked && newRadioButtons[i].id === 'new-affirmation-button') {
       affirmations.push(newMessageInput.value);
       messagesToDisplay.push(newMessageInput.value);
-      errorMessage.classList.add("hidden")
+      errorMessage.classList.add("hidden");
     }
     if(newRadioButtons[i].checked && newRadioButtons[i].id === 'new-mantra-button') {
       mantras.push(newMessageInput.value);
       messagesToDisplay.push(newMessageInput.value);
-      errorMessage.classList.add("hidden")
+      errorMessage.classList.add("hidden");
     }
   }
   if (!newRadioButtons[0].checked && !newRadioButtons[1].checked) {
