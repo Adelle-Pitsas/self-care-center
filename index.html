@@ -21,7 +21,7 @@
           </label>
         </div>
         <div id="button-box">
-          <button id="recieve-message-button">Recieve Message</button>
+          <button class="blue-button" id="recieve-message-button">Recieve Message</button>
         </div>
       </div>
       <div>
@@ -29,40 +29,33 @@
           <img id="meditateImage" class="image" src="https://raw.githubusercontent.com/Adelle-Pitsas/self-care-center/bd413602618a4ead712b1ac3e2410c87d85aa58c/assets/meditate.svg">
         </div>
       </div>
-      <button id="see-all-messages-button">See all messages</button>
-    </div>
-
-    <div class="all-message-display hidden">
-      <h2 id="all-messages-title">All messages</h2>
       <div id="create-message-box">
-        <label id='create-message-label'>Add your own message:</label>
-        <input type="text" id="custom-message">
-        <div id="create-message-radio-box">
-          <label class=radio-label>
-          <input type="radio" name="radio-name" id="new-affirmation-button" class="new-radio-button" value="affirmations">
+        <button class="blue-button" id="create-your-own-message-button">Create your own message</button>
+        <div class="create-message-box hidden">
+          <label id='create-message-label'>Add your own message:</label>
+          <input type="text" id="custom-message">
+          <div id="create-message-radio-box">
+            <label class=radio-label>
+              <input type="radio" name="radio-name" id="new-affirmation-button" class="new-radio-button" value="affirmations">
           create affirmation
-          </label>
-          <label class=radio-label>
-          <input type="radio" name="radio-name" id="new-mantra-button" class="new-radio-button" value="mantras">
+            </label>
+            <label class=radio-label>
+              <input type="radio" name="radio-name" id="new-mantra-button" class="new-radio-button" value="mantras">
           create mantra
-          </label>
+            </label>
+          </div>
+          <button class="create-custom-message">Submit</button>
+          <p class="error-message hidden">Please specify a type of message<p/>
         </div>
-        <button class="create-custom-message">Add message to list</button>
       </div>
-      <div id="message-display-area">
-          <span id="affirmations-list"></span>
-          <span id="mantras-list"></span>
-      </div>
-      <button id="go-home-button">Go home</button>
-    </div>
-
+  </div>
     <form class="login hidden">
       <h1>Login</h1>
       <label class="login-input">Username:</label>
       <input type="text" id="username-field">
       <label class="login-input">First name:</label>
       <input type="text" id="name-field">
-      <button id="login-button">Login</button>
+      <button class="blue-button" id="login-button">Login</button>
     </form>
     <script type="text/javascript" src="main.js"></script>
   </body>

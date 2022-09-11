@@ -8,14 +8,12 @@ var loginView = document.querySelector('.login');
 var loginButton = document.querySelector('#login-button');
 var nameInput = document.querySelector('#name-field');
 var greetingSection = document.querySelector('#greeting');
-var seeAllMessagesButton = document.querySelector('#see-all-messages-button');
-var seeAllMessagesView = document.querySelector('.all-message-display');
 var addCustomMessageButton = document.querySelector('.create-custom-message');
 var newRadioButtons = document.querySelectorAll('.new-radio-button');
 var newMessageInput = document.querySelector('#custom-message');
-var affirmationsListArea = document.querySelector('#affirmations-list');
-var mantrasListArea = document.querySelector('#mantras-list')
-
+var createYourOwnMessageButton = document.querySelector('#create-your-own-message-button')
+var customMessageInterface = document.querySelector('.create-message-box')
+var errorMessage = document.querySelector(".error-message");
 
 //Making Event Listeners Here:
 window.addEventListener('load', displayLogin)
@@ -24,7 +22,7 @@ loginButton.addEventListener('click', displayHomeScreen)
 
 receiveMessageButton.addEventListener('click', generateMessage);
 
-seeAllMessagesButton.addEventListener('click', displayAllMessagesView)
+createYourOwnMessageButton.addEventListener('click', displayCustomMessageInterface)
 
 addCustomMessageButton.addEventListener('click', addMessageToList)
 
@@ -59,24 +57,30 @@ function displayHomeScreen() {
   displayGreeting();
 }
 
-function displayAllMessagesView() {
-  homeView.classList.add("hidden");
-  loginView.classList.add("hidden");
-  seeAllMessagesView.classList.remove("hidden");
-  displayAllLists();
+function displayCustomMessageInterface() {
+  customMessageInterface.classList.remove("hidden");
+  createYourOwnMessageButton.classList.add("hidden");
 }
+
+
 
 function addMessageToList() {
   for(var i = 0; i < newRadioButtons.length; i++) {
     if(newRadioButtons[i].checked && newRadioButtons[i].id === 'new-affirmation-button') {
-      console.log(newMessageInput.value)
       affirmations.push(newMessageInput.value);
+      messagesToDisplay.push(newMessageInput.value);
+      errorMessage.classList.add("hidden")
     }
     if(newRadioButtons[i].checked && newRadioButtons[i].id === 'new-mantra-button') {
       mantras.push(newMessageInput.value);
+      messagesToDisplay.push(newMessageInput.value);
+      errorMessage.classList.add("hidden")
     }
   }
-  displayAllMessagesView();
+  if (!newRadioButtons[0].checked && !newRadioButtons[1].checked) {
+    errorMessage.classList.remove("hidden");
+  }
+  displayMessage();
 }
 
 
@@ -116,9 +120,9 @@ function displayGreeting() {
 
 function displayAllLists() {
   for (var i = 0; i < affirmations.length; i++) {
-    affirmationsListArea.innerHTML = "";
-    affirmationsListArea += `
-    <p>${affirmations[i]}</p>
+    messageListDisplayArea.innerHTML = "";
+    messageListDisplayArea += `
+    <div>${affirmations[i]}</div>
     `
   }
   for (var i = 0; i < mantras.length; i++) {

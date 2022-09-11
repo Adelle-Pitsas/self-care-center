@@ -66,7 +66,7 @@ h3 {
   justify-content: center;
 }
 
-#recieve-message-button {
+.blue-button {
   background-color: #134d71;
   color: #ffffff;
   font-size: 16px;
@@ -102,26 +102,16 @@ h3 {
   font-weight: 100;
 }
 
-#see-all-messages-button {
+
+/*create own message*/
+#create-your-own-message-button{
   background-color: #134d71;
   color: #ffffff;
   font-size: 16px;
   border-radius: 5px;
-  width: 185px;
+  width: 250px;
   height: 28px;
-  margin-top: 30px;
   cursor: pointer;
-}
-
-/*all messages display*/
-#all-messages-title {
-  margin-bottom: 30px;
-}
-
-.all-message-display {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 #create-message-box {
@@ -131,7 +121,15 @@ h3 {
   background-color: #ffffff;
   padding: 10px;
   border-radius: 10px;
-  width: 600px
+  width: 600px;
+  margin-top: 80px;
+  opacity: .90;
+}
+
+.create-message-box {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 #custom-message {
@@ -139,7 +137,7 @@ h3 {
   width: 350px;
 }
 
-#create-custom-message {
+.create-custom-message {
   background-color: #134d71;
   color: #ffffff;
   font-size: 16px;
@@ -149,6 +147,11 @@ h3 {
   margin-top: 30px;
   cursor: pointer;
 }
+
+.error-message {
+  color: red;
+}
+
 /*login page*/
 
 .login {
@@ -171,16 +174,6 @@ h3 {
   width: 150px;
 }
 
-#login-button {
-  margin-top: 50px;
-  background-color: #134d71;
-  color: #ffffff;
-  font-size: 16px;
-  border-radius: 5px;
-  width: 185px;
-  height: 28px;
-  cursor: pointer;
-}
 /*Other tags*/
 
 .hidden {
