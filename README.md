@@ -1,5 +1,3 @@
-______________________________________________________  
-
 # Self-Care Center
 
 ### Abstract:
@@ -11,7 +9,7 @@ This app allows a user to login, and generate a random affirmation or mantra. Th
 1. Drag and drop index.html file into your browser to see UI
 
 ### Preview of App:
-[//]: <> (Provide ONE gif or screenshot of your application - choose the "coolest" piece of functionality to show off.)
+<img width="1382" alt="Screen Shot 2022-09-12 at 5 58 58 PM" src="https://user-images.githubusercontent.com/108096652/189766055-06f3a128-0e16-43f2-abca-1934c73de22e.png">
 
 
 ### Context:
