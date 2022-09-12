@@ -1,51 +1,32 @@
-# Self Care Center
-## Overview
-How can I care for myself? One way is with affirmations and mantras!
-Affirmations are thoughts of positive self-empowerment, meant to assert your self-worth.
-Mantras are repetive phrases that are repeated again and again during mindfulness practices. Your challenge is to build an app that helps users remind themselves of their inherent value!
+______________________________________________________  
 
-This Solo Challenge gives students and instructors the opportunity to get a pulse on where you are with the foundational concepts of Module 1 curriculum. Students should use this as an opportunity to challenge themselves and work completely independently. Google can (and probably should!) be used, but any other code base should not be referenced. Instructors will be able to use your work, both completion of functionality and code quality, to determine where you stand and if you are behind for this point in the module, provide supports to intervene.
+# Self-Care Center
 
-The spec for this project can be found [here](https://frontend.turing.io/projects/module-1/self-care-center.html). 
+### Abstract:
+This app allows a user to login, and generate a random affirmation or mantra. This app also allows users to create their own mantras and affirmation to appear in the display. This app provides users with positive words for any situation they find themselves in. This app also gives users a chance to write down and display their own personal mantra and aspiration, in order to internalize it.
 
-## Learning Goals
+### Installation Instructions:
+1. Fork this repository and clone down to local machine
+1. Open project in code editor
+1. Drag and drop index.html file into your browser to see UI
 
+### Preview of App:
+[//]: <> (Provide ONE gif or screenshot of your application - choose the "coolest" piece of functionality to show off.)
+
+
+### Context:
+This project was a solo project, where students were given a comp to replicate and instructions to create functionality. Once the basic functionality was created, students chose their own iteration to complete, which added functionality. For this project, the Contributors chose to create a login section, that displayed the user's name on the home page. They also decided to create a "create your own message" section, where users could input their own message, and it was be included in the list of either mantras or affirmations and it would display in the message display area.
+Overall, this project took about 10 hours to complete and it was assigned about 2.5 weeks into Mod 1 at Turing.
+
+### Contributors:
+Adelle Pitsas was the sole contributor to this project . GitHub: https://github.com/Adelle-Pitsas
+
+### Learning Goals:
 - Gain experience building an application that utilizes HTML, CSS and JavaScript
 - Write HTML and CSS to match a provided comp
 - Understand how to listen to and respond to user events
 - Individualize your programming skill set
 
-## Setup
-
-- Fork this project to your own Github account
-- Clone the repository to your local machine
-- `cd` into the project
-- Read this README thoroughly, then begin working!
-
-______________________________________________________  
-# README Template  
-Before turning this project in, erase this line and everything above it and fill in the info below.  
-______________________________________________________  
-
-# Self-Care Center 
-
-### Abstract:
-[//]: <> (Briefly describe what you built and its features. What problem is the app solving? How does this application solve that problem?)
-
-### Installation Instructions:
-[//]: <> (What steps does a person have to take to get your app cloned down and running?)
-
-### Preview of App:
-[//]: <> (Provide ONE gif or screenshot of your application - choose the "coolest" piece of functionality to show off.)
-
-### Context:
-[//]: <> (Give some context for the project here. How long did you have to work on it? How far into the Turing program are you?)
-
-### Contributors:
-[//]: <> (Who worked on this application? Link to their GitHubs.)
-
-### Learning Goals:
-[//]: <> (What were the learning goals of this project? What tech did you work with?)
-
 ### Wins + Challenges:
-[//]: <> (What are 2-3 wins you have from this project? What were some challenges you faced - and how did you get over them?)
+One early win was using Flexbox in order to structure and format the layout correctly. This was a challenge since we had not yet formally covered Flexbox. By using some resources sent by classmates, I was able to research the tool and use it in the project.
+Another win was figuring out how to correctly reference a checked radio button, in order to display a random message from that radio button's corresponding array. Being able to create that functionality was really satisfying, and it was helpful to recreate it with the 'new message' feature.
